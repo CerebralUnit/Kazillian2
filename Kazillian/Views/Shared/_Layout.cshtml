@@ -1,44 +1,108 @@
 ﻿<!DOCTYPE html>
 <html>
 <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>@ViewBag.Title - My ASP.NET Application</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta:edge></meta:edge>
+    <title>Kazillian</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Cabin|Raleway" rel="stylesheet">
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+    <link rel="stylesheet" href="/Content/Site.css">
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
 
 </head>
 <body>
-    <div class="navbar navbar-inverse navbar-fixed-top">
+    <nav class="main-nav">
         <div class="container">
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                @Html.ActionLink("Application name", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
-            </div>
-            <div class="navbar-collapse collapse">
-                <ul class="nav navbar-nav">
-                    <li>@Html.ActionLink("Home", "Index", "Home")</li>
-                    <li>@Html.ActionLink("About", "About", "Home")</li>
-                    <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
-                </ul>
-                @Html.Partial("_LoginPartial")
+            <div class="row">
+                <div class="col-sm-1">
+                    <img src="/Content/img/kazillian-logo.png" alt="">
+                </div>
+                <div class="col-sm-3">
+                    <div class="main-search">
+                        <input type="text" placeholder="Find Your Sales Person">
+                        <a class="main-search-submit" href=""></a>
+                    </div>
+                </div>
+                <div class="col-sm-3">
+                    <ul class="nav-menu">
+                        <li><a class="browse-link" href="">Browse</a></li>
+                    </ul>
+                </div>
+                <div class="col-sm-3 pull-right">
+                    <ul class="nav-menu login-menu">
+                        <li><a class="sign-up-link" href="">Sign Up</a></li>
+                        <li><a class="log-in-link" href="">Log In</a></li>
+                    </ul>
+                </div>
             </div>
         </div>
-    </div>
-    <div class="container body-content">
+    </nav>
+   
+    <section class="main-content container-fluid">
         @RenderBody()
-        <hr />
-        <footer>
-            <p>&copy; @DateTime.Now.Year - My ASP.NET Application</p>
-        </footer>
-    </div>
-
-    @Scripts.Render("~/bundles/jquery")
-    @Scripts.Render("~/bundles/bootstrap")
-    @RenderSection("scripts", required: false)
+    </section>
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-4">
+                    <h2 class="link-menu-header">Header</h2>
+                    <ul class="link-menu">
+                        <li><a href="">Menu Item</a></li>
+                        <li><a href="">Menu Item</a></li>
+                        <li><a href="">Menu Item</a></li>
+                        <li><a href="">Menu Item</a></li>
+                        <li><a href="">Menu Item</a></li>
+                    </ul>
+                </div>
+                <div class="col-sm-4">
+                    <h2 class="link-menu-header">Header</h2>
+                    <ul class="link-menu">
+                        <li><a href="">Menu Item</a></li>
+                        <li><a href="">Menu Item</a></li>
+                        <li><a href="">Menu Item</a></li>
+                        <li><a href="">Menu Item</a></li>
+                        <li><a href="">Menu Item</a></li>
+                    </ul>
+                </div>
+                <div class="col-sm-4">
+                    <h2 class="link-menu-header">Header</h2>
+                    <ul class="link-menu">
+                        <li><a href="">Menu Item</a></li>
+                        <li><a href="">Menu Item</a></li>
+                        <li><a href="">Menu Item</a></li>
+                        <li><a href="">Menu Item</a></li>
+                        <li><a href="">Menu Item</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-xs-12">
+                    <div class="social">
+                        <ul class="pull-left list-inline content" style="max-height: 30px;">
+                            <li class="gplus"><a title="Add Upwork to Google+ circles" target="_blank" href="https://plus.google.com/107040851368295259701"></a></li>
+                            <li class="facebook"><a title="Visit Upwork on Facebook" target="_blank" href="https://www.facebook.com/upwork"></a></li>
+                            <li class="linkedin"><a title="Read Upwork company news on LinkedIn" target="_blank" href="https://www.linkedin.com/company/upwork"></a></li>
+                            <li class="twitter"><a title="Follow  on Twitter" target="_blank" href="https://twitter.com/Upwork"></a></li>
+                            <li class="youtube"><a title="Watch Upwork videos on YouTube" target="_blank" href="https://www.youtube.com/channel/UCvxGFOnwUBDHHcxuPqhe4CQ"></a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-xs-12">
+                    <div class="copyright">
+                        &copy;2017 Kazillian
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+   
+        @Scripts.Render("~/bundles/jquery")
+        @Scripts.Render("~/bundles/bootstrap")
+        @RenderSection("scripts", required: false)
 </body>
 </html>

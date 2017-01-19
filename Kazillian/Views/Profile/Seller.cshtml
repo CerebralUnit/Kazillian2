@@ -1,0 +1,86 @@
+﻿
+@{
+    ViewBag.Title = "SalesmanProfile";
+}
+
+@model Kazillian.Model.SalesPerson
+
+
+<div class="profile-summary">
+    <div class="container">
+        <div class="row">
+            <div class="profile-image">
+                <img width="200" class="img-responsive" src="@Model.Image" alt="">
+            </div>
+            <div class="profile-summary-copy">
+                <h2 class="profile-name">@Model.FirstName @Model.LastName</h2>
+                <p class="profile-title">@Model.JobTitle</p>
+
+                @foreach (var Skill in Model.Skills)
+                {
+                    <span class="tag">@Skill</span>
+                }
+               
+            </div>
+        </div>
+    </div>
+    <div class="profile-links">
+        <div class="container">
+            <a class="socicon socicon-twitter" href=""></a>
+
+            <a class="socicon socicon-facebook" href=""></a>
+
+            <a class="socicon socicon-googleplus" href=""></a>
+
+            <a class="socicon socicon-linkedin" href=""></a>
+            <a href="" class="button hire-button">Hire Me</a>
+        </div>
+    </div>
+</div>
+
+<div class="container profile-copy">
+    <div class="row">
+        <div class="col-sm-9">
+            <h3>Overview</h3>
+            <p>@Model.Bio</p>
+            <h3>Resume</h3>
+            <p>@Model.Resume</p>
+            <h3>Work History</h3>
+            <ul>
+                <li>Jobs</li>
+                <li>Jobs</li>
+                <li>Jobs</li>
+                <li>Jobs</li>
+                <li>Jobs</li>
+                <li>Jobs</li>
+                <li>Jobs</li>
+                <li>Jobs</li>
+                <li>Jobs</li>
+                <li>Jobs</li>
+            </ul>
+            <h3>Featured Feedback</h3>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iure non repellat minima voluptatem adipisci quis error ex veniam mollitia quaerat ipsum nisi dolorum quam maxime, nobis aliquam ab aspernatur debitis!</p>
+        </div>
+        <div class="col-sm-3">
+
+            <h3>More Info</h3>
+            <div class="stat rating">
+                <div class="stat-icon"><i class="fa fa-star" aria-hidden="true"></i></div>4.5/5
+            </div>
+            <div class="stat reviews">
+                <div class="stat-icon"><i class="fa fa-comment" aria-hidden="true"></i></div> <a href="">25 Reviews</a>
+            </div>
+            <div class="stat jobs-complete">
+                <div class="stat-icon"><i class="fa fa-check-circle-o" aria-hidden="true"></i></div> 147
+            </div>
+            <div class="stat availability">
+                <div class="stat-icon"><i class="fa fa-clock-o" aria-hidden="true"></i></div> Mon - Fri 8am - 6pm EST
+            </div>
+            <div class="stat price"><div class="stat-icon"><i class="fa fa-money" aria-hidden="true"></i></div>@String.Format("{0:c}", Model.AverageCost)/hr</div>
+            <div class="stat language"><div class="stat-icon"><i class="fa fa-language" aria-hidden="true"></i></div>@String.Join(",", Model.Languages.ToArray())</div>
+            <div class="stat country"><div class="stat-icon"><i class="fa fa-map-marker" aria-hidden="true"></i></div>@Model.CountryOfOrigin</div>
+
+        </div>
+    </div>
+
+</div>

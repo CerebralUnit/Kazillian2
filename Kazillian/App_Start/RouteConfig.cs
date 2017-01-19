@@ -14,6 +14,29 @@ namespace Kazillian
             routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
 
             routes.MapRoute(
+              name: "SellerProfile",
+              url: "seller/{id}",
+              defaults: new { controller = "Profile", action = "Seller", id = UrlParameter.Optional }
+
+
+          );
+
+            routes.MapRoute(
+              name: "EmployerProfile",
+              url: "employer/{id}",
+              defaults: new { controller = "Profile", action = "Employer", id = UrlParameter.Optional }
+
+
+          );
+
+            routes.MapRoute(
+               name: "JobProfile",
+               url: "job/{id}",
+               defaults: new { controller = "Profile", action = "Job", id = UrlParameter.Optional }
+             
+           );
+
+            routes.MapRoute(
                 name: "Default",
                 url: "{controller}/{action}/{id}",
                 defaults: new { controller = "Home", action = "Index", id = UrlParameter.Optional }

@@ -1,0 +1,132 @@
+﻿
+@{
+    ViewBag.Title = "PeopleSearch";
+}
+
+@model List<Kazillian.Model.SalesPerson>
+
+<h2>PeopleSearch</h2>
+
+<div class="container" style="padding-top: 110px;">
+    <div class="row">
+        <div class="col-sm-3">
+            <div class="card">
+
+                <ul class="button-menu">
+                    <li><a href="">Item</a></li>
+                    <li><a href="">Item</a></li>
+                    <li><a href="">Item</a></li>
+                    <li><a href="">Item</a></li>
+                    <li><a href="">Item</a></li>
+                    <li><a href="">Item</a></li>
+                </ul>
+
+            </div>
+        </div>
+        <div class="col-sm-9">
+            <ul class="search-results">
+                @foreach (var Salesperson in Model)
+                {
+                    <li class="search-result">
+                        <article class="row">
+                            <div class="col-md-2 image-col">
+                               
+                                    <a class="search-image" href="/seller/@Salesperson.Username" title="Zack Taylor ">
+                                       
+                                        <img class="img-responsive" alt="@Salesperson.Username's Avatar" src="@Salesperson.Image" class="avatar vertical-align-middle avatar-lg">
+                                    </a>
+                                 
+                                   
+                            </div>
+                            <div class="col-md-8">
+                                <h3>
+                                    <span class="star-button"><i class="fa fa-star-o" aria-hidden="true"></i></span>
+                                    <a href="/seller/@Salesperson.Username" title="Zack Taylor">
+                                        @Salesperson.FirstName @Salesperson.LastName (@Salesperson.Username)
+                                    </a>
+                                </h3>
+                                <div>
+                                    <h2 class="sales-title ellipsis">@Salesperson.JobTitle</h2>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-3">
+                                        <strong>@String.Format("{0:c}", Salesperson.AverageCost)</strong> <span class="text-muted">/ hr</span>
+                                    </div>
+                                    <div class="col-md-3">
+                                        
+                                        <span><strong>@(Salesperson.TotalMoneyEarned)k+</strong> <span class="text-muted">earned</span></span>
+                                        
+                                    </div>
+                                    <div class="col-md-3">
+                                        <div class="row">
+                                           
+                                            <div class="col-md-12">
+                                                <div class="clearfix">
+                                                    <i class="fa fa-check-square-o" aria-hidden="true"></i>
+                                                    <div class="progress-sm">
+                                                        
+                                                        <div class="progress-bar progress-bar-complimentary" style="width:100%">
+                                                             100% Success 
+                                                        </div>
+                                                    </div> 
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-3">
+                                        <div data-country="United States">
+                                            <div class="no-wrap ellipsis">
+                                                <i class="fa fa-map-marker" aria-hidden="true"></i>
+                                                <strong title="@Salesperson.CountryOfOrigin">@Salesperson.CountryOfOrigin</strong>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        
+                                        <p>
+                                            @Salesperson.Bio
+                                        </p>
+                                        
+                                    </div>
+                                </div>
+                                <div>
+                                    @if(Salesperson.Skills != null) { 
+                                        foreach (var Skill in Salesperson.Skills)
+                                        {
+                                            <a class="tag-skill" href="/search/sellers/@Skill" target="_self">
+                                                @Skill
+                                            </a>
+                                        }
+                                    }
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-10">
+                                        <div class="row">
+                                            <small class="col-md-2">
+                                                <strong>Completed:</strong>
+                                                <a class="/seller/@Salesperson.Username">@Salesperson.CompletedJobs</a>
+                                            </small>
+                                            <small class="col-md-3">
+                                                <strong>Active:</strong>
+                                                <a class="/seller/@Salesperson.Username">@Salesperson.ActiveJobs</a>
+                                            </small>
+                                        </div>
+                                    </div>
+                                </div> 
+                            </div>
+                            <div class="col-md-2">
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <div>
+                                            <a class="btn btn-primary btn-sm btn-block hireBtn" href="/e/3631988/jobs/invite/~015244e0afbfab7633" role="button">Hire Me</a>
+                                        </div> 
+                                    </div>
+                                </div>
+                            </div>
+                        </article>
+                    </li>
+                }
+            </ul>
+            </div></div></div>
