@@ -46,6 +46,7 @@
   <ItemGroup>
     <Compile Include="Language.cs" />
     <Compile Include="Address.cs" />
+    <Compile Include="SearchResult.cs" />
     <Compile Include="User.cs" />
     <Compile Include="Job.cs" />
     <Compile Include="ItemType.cs" />

@@ -61,9 +61,11 @@ margin-top: 0;
         padding-right: 0;
     }
     .search-image{
-        position:relative;
-        overflow:hidden;
-        display:block;
+           position: relative;
+    overflow: hidden;
+    display: block;
+    border-radius: 50%;
+    border: 2px solid #197efa;
     }
      
 a.button{
@@ -265,6 +267,48 @@ transition: padding-left 250ms;
     color: #197efa;
     border-left: 3px solid #197efa;
     padding-left: 50px;
+}
+.button-menu li a.facet{
+    display: block;
+    background: #fff;
+    padding: 3px 0;
+    text-transform: none;
+    letter-spacing: 0;
+    font-weight: bold;
+    font-weight: normal;
+    color: #000;
+    font-size: 13px;
+}
+.button-menu li a.facet:hover{
+ 
+    border-left: none; 
+    color:#ff007e;
+
+}
+.facet-title{
+    font-weight: bold;
+    margin: 0 0 10px 0;
+    font-size: 13px;
+    letter-spacing: 2px;
+}
+.facets.card-content{
+    padding: 20px;
+}
+.facet-count{
+    float: right;
+    padding: 0 10px;
+    font-size: 11px;
+    color: #fff;
+    background: #aaa;
+    border-radius: 50%;
+    width: 16px;
+    height: 16px; 
+    text-align: center;
+    line-height: 16px;
+    padding: 0;
+}
+.button-menu li a.facet:hover .facet-count{
+     background:#ff007e;
 }
 .button-menu-header{
     font-size:18px;

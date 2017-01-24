@@ -3,29 +3,36 @@
     ViewBag.Title = "PeopleSearch";
 }
 
-@model List<Kazillian.Model.SalesPerson>
+@model Kazillian.Model.SearchResult<Kazillian.Model.SalesPerson>
 
 <h2>PeopleSearch</h2>
 
-<div class="container" style="padding-top: 110px;">
+<div class="container" style="    padding-top: 64px;">
     <div class="row">
         <div class="col-sm-3">
             <div class="card">
+                <div class="card-content facets">
+                    @foreach (var Facet in Model.Facets)
+                    {
+                        <ul class="button-menu">
+                            <li class="facet-title">@Facet.Term</li>
+                            @foreach (var FacetBucket in Facet.Buckets)
+                            {
+                                if (FacetBucket.DocumentCount > 0)
+                                {
+                                    <li><a class="facet" href="">@FacetBucket.Name <span class="facet-count">@FacetBucket.DocumentCount</span></a></li>
+                                }
+                            }
+                        </ul>
 
-                <ul class="button-menu">
-                    <li><a href="">Item</a></li>
-                    <li><a href="">Item</a></li>
-                    <li><a href="">Item</a></li>
-                    <li><a href="">Item</a></li>
-                    <li><a href="">Item</a></li>
-                    <li><a href="">Item</a></li>
-                </ul>
+                    }
+                </div>
 
             </div>
         </div>
         <div class="col-sm-9">
             <ul class="search-results">
-                @foreach (var Salesperson in Model)
+                @foreach (var Salesperson in Model.Results)
                 {
                     <li class="search-result">
                         <article class="row">
