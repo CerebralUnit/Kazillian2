@@ -12,8 +12,16 @@ namespace Kazillian.Service
     {
         public static SalesPerson GetSalesperson(string username)
         {
-            var Repo = new ProfileRepo();
+            var Repo = new UserRepo();
             var Result = Repo.GetSalesperson(username);
+
+            return Result;
+        }
+
+        public static User Authenticate(string username, string password)
+        {
+            var Repo   = new UserRepo();
+            var Result = Repo.AuthenticateUser(username, password);
 
             return Result;
         }

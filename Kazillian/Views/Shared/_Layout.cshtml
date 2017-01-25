@@ -14,36 +14,49 @@
 
 </head>
 <body>
-    <nav class="main-nav">
-        <div class="container">
-            <div class="row">
-                <div class="col-sm-1">
-                    <img src="/Content/img/kazillian-logo.png" alt="">
-                </div>
-                <div class="col-sm-3">
-                    <div class="main-search">
-                        <input type="text" placeholder="Find Your Sales Person">
-                        <a class="main-search-submit" href=""></a>
+    <div class="main-wrapper">
+        <nav class="main-nav">
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-1">
+                        <img src="/Content/img/kazillian-logo.png" alt="">
+                    </div>
+                    <div class="col-sm-3">
+                        <div class="main-search">
+                            <input type="text" placeholder="Find Your Sales Person">
+                            <a class="main-search-submit" href=""></a>
+                        </div>
+                    </div>
+                    <div class="col-sm-3">
+                        <ul class="nav-menu">
+                            <li><a class="browse-link" href="">Browse</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-sm-3 pull-right">
+                        @if (!User.Identity.IsAuthenticated)
+                        {
+                            <ul class="nav-menu login-menu">
+                                <li><a class="sign-up-link" href="">Sign Up</a></li>
+                                <li><a class="log-in-link" href="/account/login">Log In</a></li>
+                            </ul>
+                        }
+                        else
+                        {
+                            <ul class="nav-menu logout-menu">
+                                <li><a class="account-menu" href="">Account</a></li>
+                                <li><a class="log-out-link" href="/account/logout">Log Out</a></li>
+                            </ul>
+                        }
+
                     </div>
                 </div>
-                <div class="col-sm-3">
-                    <ul class="nav-menu">
-                        <li><a class="browse-link" href="">Browse</a></li>
-                    </ul>
-                </div>
-                <div class="col-sm-3 pull-right">
-                    <ul class="nav-menu login-menu">
-                        <li><a class="sign-up-link" href="">Sign Up</a></li>
-                        <li><a class="log-in-link" href="">Log In</a></li>
-                    </ul>
-                </div>
             </div>
-        </div>
-    </nav>
-   
-    <section class="main-content container-fluid">
-        @RenderBody()
-    </section>
+        </nav>
+
+        <section class="main-content container-fluid">
+            @RenderBody()
+        </section>
+    </div>
     <footer>
         <div class="container">
             <div class="row">
@@ -100,9 +113,10 @@
             </div>
         </div>
     </footer>
-   
-        @Scripts.Render("~/bundles/jquery")
-        @Scripts.Render("~/bundles/bootstrap")
-        @RenderSection("scripts", required: false)
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)
 </body>
+
 </html>

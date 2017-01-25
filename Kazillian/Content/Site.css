@@ -1,4 +1,7 @@
-﻿ body{
+﻿body, html{
+    height: 100%;
+} 
+body{
         color:#202022;
         font-family: 'Cabin';
     }
@@ -9,6 +12,48 @@ font-weight: bold;
 margin-top: 0;
 
     }
+    .btn-default{
+            color: #fff;
+    background-color: #ff007e;
+    border-color: #ff007e;
+    }
+    .btn-default.btn-hollow{
+            color: #ff007e;
+    background-color: transparent;
+    border-color: #ff007e;
+    }
+    .btn-fluid{
+        width: 100%;
+    }
+    div.main-wrapper{
+        min-height: 100%;
+        padding-bottom: 435px;
+    }
+    footer{
+        margin-top: -435px;
+    }
+    .line-heading {
+    overflow: hidden;
+    text-align: center;
+    color: #7d7d7d;
+}
+    .line-heading:before, .line-heading:after {
+        background-color: #e1e1e1;
+        content: "";
+        display: inline-block;
+        height: 1px;
+        position: relative;
+        vertical-align: middle;
+        width: 50%;
+    }
+    .line-heading:before {
+    right: 5px;
+    margin-left: -50%;
+}
+    .line-heading:after {
+    left: 5px;
+    margin-right: -50%;
+}
     .search-results{
         padding: 20px;
         background: #fff;
@@ -453,8 +498,33 @@ input[type=text]{
     background: url(/Content/img/door-icon.png) no-repeat top center;
     background-size: 100%;
 }
+.account-menu:before{
+    display: block;
+    content: ' ';
+    width: 17px;
+    height: 17px;
+    margin-top: 31px;
+    margin-right: 10px;
+    background: url(/Content/img/user-icon.png) no-repeat top center;
+    float: left;
+    background-size: 100%;
+}
+.log-out-link:before{
+    display: block;
+    content: ' ';
+    width: 17px;
+    height: 17px;
+    margin-top: 31px;
+    margin-right: 10px;
+    float: left;
+    background: url(/Content/img/door-close-icon.png) no-repeat top center;
+    background-size: 100%;
+}
+
 .sign-up-link:hover:before,
-.log-in-link:hover:before
+.log-in-link:hover:before,
+.account-menu:hover:before,
+.log-out-link:hover:before
 {
   background-position: center -17px;
 }
@@ -576,7 +646,8 @@ a.button.hire-button {
     transition: all 200ms ease-out;
     border: 1px solid #bbd9ff;
 }
-.login-menu > li{
+.login-menu > li,
+.logout-menu > li{
     float:right;
     padding: 0;
     margin-left: 15px;

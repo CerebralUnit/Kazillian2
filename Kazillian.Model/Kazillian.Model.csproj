@@ -44,8 +44,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ExtensionMethods.cs" />
     <Compile Include="Language.cs" />
     <Compile Include="Address.cs" />
+    <Compile Include="SaltedPassword.cs" />
     <Compile Include="SearchResult.cs" />
     <Compile Include="User.cs" />
     <Compile Include="Job.cs" />
