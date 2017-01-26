@@ -1,0 +1,44 @@
+﻿
+@{
+    ViewBag.Title = "SignUp";
+}
+ 
+<div class="container page-container" ng-controller="userTypePageController">
+    <div class="row m-lg-top m-xlg-bottom">
+        <div class="col-md-12 m-lg-bottom">
+            <hgroup class="text-center">
+                <h1 class="m-xs-top-bottom">Let's hit the ground running!</h1>
+                <h1 class="m-xs-top-bottom">How would you like to get started?.</h1>
+            </hgroup>
+        </div>
+
+        <div class="m-lg-bottom hidden-xs">&nbsp;</div>
+        <div class="p-md-bottom visible-xs">&nbsp;</div>
+
+        <div class="col-md-12 text-center">
+            <div class="col-md-5">
+                <div class="text-muted">
+                    <div><img src="~/Content/img/peoplesearch-icon.png" alt="Alternate Text" /></div>
+                    <h3 class="o-user-type-selection">I want to hire a Sales Person/Team</h3>
+                </div>
+                <p class="heading-subtitle text-center">
+                   Let's find expert salespeople to jumpstart your business!
+                </p>
+                <a class="btn btn-default btn-lg" href="/signup/employer">Hire</a>
+            </div>
+
+            <div class="col-md-2 vertical-line-heading">OR</div>
+
+            <div class="col-md-5">
+                <div class="text-muted">
+                    <div><img src="~/Content/img/salesguy-icon.png" alt="Alternate Text" /></div>
+                    <h3 class="o-user-type-selection">I'm looking for work as a Salesperson</h3>
+                </div>
+                <p class="heading-subtitle text-center">
+                   Find and collaborate on projects to help owners boost sales and leads.
+                </p>
+                <a class="btn btn-default btn-hollow btn-lg" href="/signup/salesperson">Work</a>
+            </div>
+        </div>
+    </div>
+</div>

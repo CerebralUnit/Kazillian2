@@ -148,7 +148,11 @@ namespace Kazillian.Controllers
                     return View(model);
             }
         }
-
+        [AllowAnonymous]
+        public ActionResult SignUp()
+        {
+            return View();
+        }
         //
         // GET: /Account/Register
         [AllowAnonymous]

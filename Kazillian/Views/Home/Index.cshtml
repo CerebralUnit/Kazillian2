@@ -6,8 +6,8 @@
     <span class="tagline">A Virtually Endless Sales Team<br> at Your Finger Tips</span>
     <form class="header-form" action="">
         <div>
-            <input type="text">
-            <a class="submit" href="">Get Started</a>
+            <input class="header-form-input" type="text">
+            <a class="submit header-form-submit" href="">Get Started</a>
         </div>
     </form>
 </header>
@@ -72,3 +72,21 @@
         </div>
     </div>
 </div>
+
+@section scripts{
+    <script>
+        $('.header-form-input').on('keydown', function (e) {
+            if (e.keyCode === 13) {
+                e.preventDefault();
+                searchSellers($(this).val());
+            }
+        })
+        $('.header-form-submit').click(function (e) {
+            e.preventDefault();
+            var query = $('.header-form-input').val();
+            if (query && query.length > 0) {
+                searchSellers(query);
+            }
+        });
+    
+    </script>}

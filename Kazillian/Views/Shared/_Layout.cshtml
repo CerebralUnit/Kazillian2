@@ -19,11 +19,11 @@
             <div class="container">
                 <div class="row">
                     <div class="col-sm-1">
-                        <img src="/Content/img/kazillian-logo.png" alt="">
+                        <a href="/"> <img src="/Content/img/kazillian-logo.png" alt=""></a> 
                     </div>
                     <div class="col-sm-3">
                         <div class="main-search">
-                            <input type="text" placeholder="Find Your Sales Person">
+                            <input class="main-search-input" type="text" placeholder="Find Your Sales Person">
                             <a class="main-search-submit" href=""></a>
                         </div>
                     </div>
@@ -36,7 +36,7 @@
                         @if (!User.Identity.IsAuthenticated)
                         {
                             <ul class="nav-menu login-menu">
-                                <li><a class="sign-up-link" href="">Sign Up</a></li>
+                                <li><a class="sign-up-link" href="/signup">Sign Up</a></li>
                                 <li><a class="log-in-link" href="/account/login">Log In</a></li>
                             </ul>
                         }
@@ -106,8 +106,10 @@
             </div>
             <div class="row">
                 <div class="col-xs-12">
-                    <div class="copyright">
-                        &copy;2017 Kazillian
+                    <div class="subfooter">
+                        <span class="copyright">
+                            &copy;2017 Kazillian
+                        </span> | <a href="#">Terms of Service</a> | <a href="#">Privacy Policy</a>
                     </div>
                 </div>
             </div>
@@ -116,6 +118,23 @@
 
     @Scripts.Render("~/bundles/jquery")
     @Scripts.Render("~/bundles/bootstrap")
+    <script>
+        $('.main-search-input').on('keydown', function (e) {
+            if (e.keyCode === 13) {
+                searchSellers( $(this).val() );
+            }
+        })
+        $('.main-search-submit').click(function (e) {
+            e.preventDefault();
+            var query = $('.main-search-input').val();
+            if (query && query.length > 0) {
+                searchSellers(query);
+            }
+        });
+        function searchSellers(q) {
+            window.location = '/search/sellers?q=' + q.trim().replace(' ', '+');
+        }
+    </script>
     @RenderSection("scripts", required: false)
 </body>
 

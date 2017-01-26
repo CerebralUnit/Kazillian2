@@ -14,6 +14,12 @@ namespace Kazillian
             routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
 
             routes.MapRoute(
+              name: "SignUp",
+              url: "signup/{id}",
+              defaults: new { controller = "Account", action = "SignUp", id = UrlParameter.Optional } 
+          );
+
+            routes.MapRoute(
               name: "SellerProfile",
               url: "seller/{id}",
               defaults: new { controller = "Profile", action = "Seller", id = UrlParameter.Optional }
