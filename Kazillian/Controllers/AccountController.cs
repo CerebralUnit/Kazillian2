@@ -149,9 +149,17 @@ namespace Kazillian.Controllers
             }
         }
         [AllowAnonymous]
-        public ActionResult SignUp()
+        public ActionResult SignUp(string id )
         {
-            return View();
+            if (String.IsNullOrWhiteSpace(id))
+            {
+                return View();
+            }
+            else
+            {
+                return View(id);
+            }
+          
         }
         //
         // GET: /Account/Register
