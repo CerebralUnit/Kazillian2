@@ -12,12 +12,12 @@ namespace Kazillian.Repo
     public class UserRepo
     {
 
-        public User CreateUser()
+        public Account CreateUser()
         { 
             return null;
         }
 
-        public User AuthenticateUser(string username, string password)
+        public Account AuthenticateUser(string username, string password)
         {
             var Match    = GetSalesperson(username);
             var SaltedPW = new SaltedPassword(Match.Salt, Match.Password);

@@ -18,7 +18,7 @@ namespace Kazillian.Service
             return Result;
         }
 
-        public static User Authenticate(string username, string password)
+        public static Account Authenticate(string username, string password)
         {
             var Repo   = new UserRepo();
             var Result = Repo.AuthenticateUser(username, password);

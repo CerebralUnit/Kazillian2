@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Kazillian.Model
 {
-    public class User : Person
+    public class Account : Person
     {
         public string Username { get; set; }
         public string Password { get; set; }
@@ -17,7 +17,19 @@ namespace Kazillian.Model
         public DateTime LastLoggedIn { get; set; }
         public DateTime SignedUpDate { get; set; }
         public List<string> Connections { get; set; }
+
         [JsonIgnore]
-        public List<string> Languages { get; set; }
+        public List<string> Languages { get; set; } 
+
+        public AccountType AccountCreatedAsType { get; set; }
+
+        public SellerProfile SalesProfile { get; set; }
+        public ClientProfile EmployerProfile { get; set; }
+    }
+
+    public enum AccountType
+    {
+        Seller,
+        Client
     }
 }

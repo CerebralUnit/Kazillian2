@@ -96,6 +96,8 @@ namespace Kazillian.Controllers
             {
                 FormsAuthentication.SetAuthCookie(model.Email, false);
 
+                if (String.IsNullOrWhiteSpace(returnUrl))
+                    returnUrl = "/me";
                 return RedirectToLocal(returnUrl);
             }
             else

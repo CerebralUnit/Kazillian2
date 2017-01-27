@@ -2,7 +2,41 @@
 @{
     ViewBag.Title = "Salesperson Sign up";
 }
-<div class="container" style="padding-top: 100px;">
+
+@section Styles{
+    <style>
+        .form-horizontal .form-group {
+            margin-bottom: -1px;
+        }
+
+            .form-horizontal .form-group input,
+            .form-horizontal .form-group div,
+            .form-horizontal .form-group a {
+                border-radius: 0;
+            }
+
+            .form-horizontal .form-group:first-child input {
+                border-top-right-radius: 3px;
+                border-top-left-radius: 3px;
+            }
+
+            .form-horizontal .form-group:last-child input {
+                border-bottom-right-radius: 3px;
+                border-bottom-left-radius: 3px;
+            }
+
+        .form-header {
+            text-align: center;
+            color: #333;
+            margin-bottom: 20px;
+        }
+
+        .independent-form-group {
+            margin-top: 40px;
+        }
+    </style>
+}
+<div class="container" >
     <div class="row">
         <div class="col-md-6 col-md-offset-3">
             <section id="loginForm">
@@ -10,30 +44,191 @@
                 @using (Html.BeginForm("Register", "Account", FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
                 {
                     @Html.AntiForgeryToken()
-                    <h4>Create a new account.</h4>
+                    <h3 class="form-header">Create a New Seller Account</h3>
+                    <div class="text-muted text-center">Looking to hire? <a href="employer">Sign up as a client</a></div>
                     <hr />
                     @Html.ValidationSummary("", new { @class = "text-danger" })
-                    <div class="form-group">
-                        @Html.LabelFor(m => m.Email, new { @class = "col-md-2 control-label" })
-                        <div class="col-md-10">
-                            @Html.TextBoxFor(m => m.Email, new { @class = "form-control" })
+                    <div class="o-signup-form-fields">
+                        <div class="form-group">
+                            <div class="col-xs-offset-1 col-xs-10">
+                                <input type="text" name="firstName" class="form-control has-form-message" placeholder="First Name" required="required">
+                            </div>
                         </div>
-                    </div>
-                    <div class="form-group">
-                        @Html.LabelFor(m => m.Password, new { @class = "col-md-2 control-label" })
-                        <div class="col-md-10">
-                            @Html.PasswordFor(m => m.Password, new { @class = "form-control" })
+                        <div class="form-group">
+                            <div class="col-xs-offset-1 col-xs-10">
+                                <input type="text" name="lastName" class="form-control has-form-message" placeholder="Last Name" required="required">
+                            </div>
                         </div>
-                    </div>
-                    <div class="form-group">
-                        @Html.LabelFor(m => m.ConfirmPassword, new { @class = "col-md-2 control-label" })
-                        <div class="col-md-10">
-                            @Html.PasswordFor(m => m.ConfirmPassword, new { @class = "form-control" })
+                        <div class="form-group">
+                            <div class="col-xs-offset-1 col-xs-10">
+                                <input type="text" name="company" class="form-control has-form-message" placeholder="Company Name (Optional)" required="required">
+
+                            </div>
                         </div>
-                    </div>
-                    <div class="form-group">
-                        <div class="col-md-offset-2 col-md-10">
-                            <input type="submit" class="btn btn-fluid btn-default btn-hollow" value="Get Started" />
+                        <div class="form-group">
+                            <div class="col-xs-offset-1 col-xs-10">
+                                <input type="text" name="email" class="form-control" placeholder="Email" required="required">
+
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="col-xs-offset-1 col-xs-10">
+                                <input type="text" name="username" class="form-control" placeholder="Username" required="required">
+
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="col-xs-offset-1 col-xs-10">
+                                <div class="has-form-message select-box-container select-country ui-select-container" required="required">
+                                    <a class="select-box ui-select-match select-box-default" aria-label="Select box select" placeholder="Select Country">
+                                        <span class="select-box-prompt">Select Country</span>
+                                        <span class="select-box-chosen "></span>
+                                        <span class="select-box-arrow ui-select-toggle"><b></b></span>
+                                    </a>
+                                    <div class="ui-select-dropdown select-box-drop">
+                                        <div class="search-container select-box-search">
+                                            <input type="search" placeholder="Filter Countries" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" role="combobox" class="ui-select-search">
+                                        </div>
+                                        <ul tabindex="-1" class="ui-select-choices ui-select-choices-content select-box-results">
+                                            <li class="ui-select-choices-group">
+                                                <ul role="listbox" class="select-box-result-single">
+                                                    <li role="option" class="ui-select-choices-row select-box-highlighted">
+                                                        <div class="select-box-result-label ui-select-choices-row-inner">
+                                                            <div>Albania</div>
+                                                        </div>
+                                                    </li>
+                                                    <li role="option" class="ui-select-choices-row">
+                                                        <div class="select-box-result-label ui-select-choices-row-inner">
+                                                            <div>Algeria</div>
+                                                        </div>
+                                                    </li>
+                                                    <li role="option" class="ui-select-choices-row">
+                                                        <div class="select-box-result-label ui-select-choices-row-inner">
+                                                            <div>American Samoa</div>
+                                                        </div>
+                                                    </li>
+                                                    <li role="option" class="ui-select-choices-row">
+                                                        <div class="select-box-result-label ui-select-choices-row-inner">
+                                                            <div>Andorra</div>
+                                                        </div>
+                                                    </li>
+                                                    <li role="option" class="ui-select-choices-row">
+                                                        <div class="select-box-result-label ui-select-choices-row-inner">
+                                                            <div>Angola</div>
+                                                        </div>
+                                                    </li>
+                                                    <li role="option" class="ui-select-choices-row">
+                                                        <div class="select-box-result-label ui-select-choices-row-inner">
+                                                            <div>Anguilla</div>
+                                                        </div>
+                                                    </li>
+                                                    <li role="option" class="ui-select-choices-row">
+                                                        <div class="select-box-result-label ui-select-choices-row-inner">
+                                                            <div>Antarctica</div>
+                                                        </div>
+                                                    </li>
+                                                    <li role="option" class="ui-select-choices-row">
+                                                        <div class="select-box-result-label ui-select-choices-row-inner">
+                                                            <div>Antigua and Barbuda</div>
+                                                        </div>
+                                                    </li>
+                                                    <li role="option" class="ui-select-choices-row">
+                                                        <div class="select-box-result-label ui-select-choices-row-inner">
+                                                            <div>Argentina</div>
+                                                        </div>
+                                                    </li>
+                                                    <li role="option" class="ui-select-choices-row">
+                                                        <div class="select-box-result-label ui-select-choices-row-inner">
+                                                            <div>Armenia</div>
+                                                        </div>
+                                                    </li>
+                                                    <li role="option" class="ui-select-choices-row">
+                                                        <div class="select-box-result-label ui-select-choices-row-inner">
+                                                            <div>Aruba</div>
+                                                        </div>
+                                                    </li>
+                                                    <li role="option" class="ui-select-choices-row">
+                                                        <div class="select-box-result-label ui-select-choices-row-inner">
+                                                            <div>Australia</div>
+                                                        </div>
+                                                    </li>
+                                                    <li role="option" class="ui-select-choices-row">
+                                                        <div class="select-box-result-label ui-select-choices-row-inner">
+                                                            <div>Austria</div>
+                                                        </div>
+                                                    </li>
+                                                    <li role="option" class="ui-select-choices-row">
+                                                        <div class="select-box-result-label ui-select-choices-row-inner">
+                                                            <div>Azerbaijan</div>
+                                                        </div>
+                                                    </li>
+                                                    <li role="option" class="ui-select-choices-row">
+                                                        <div class="select-box-result-label ui-select-choices-row-inner">
+                                                            <div>Bahamas</div>
+                                                        </div>
+                                                    </li>
+                                                    <li role="option" class="ui-select-choices-row">
+                                                        <div class="select-box-result-label ui-select-choices-row-inner">
+                                                            <div>Bahrain</div>
+                                                        </div>
+                                                    </li>
+                                                    <li role="option" class="ui-select-choices-row">
+                                                        <div class="select-box-result-label ui-select-choices-row-inner">
+                                                            <div>Bangladesh</div>
+                                                        </div>
+                                                    </li>
+                                                    <li role="option" class="ui-select-choices-row">
+                                                        <div class="select-box-result-label ui-select-choices-row-inner">
+                                                            <div>Barbados</div>
+                                                        </div>
+                                                    </li>
+                                                    <li role="option" class="ui-select-choices-row">
+                                                        <div class="select-box-result-label ui-select-choices-row-inner">
+                                                            <div>Belarus</div>
+                                                        </div>
+                                                    </li>
+                                                    <li role="option" class="ui-select-choices-row">
+                                                        <div class="select-box-result-label ui-select-choices-row-inner">
+                                                            <div>Belgium</div>
+                                                        </div>
+                                                    </li>
+                                                </ul>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="col-xs-offset-1 col-xs-10">
+                                <input type="text" name="username" class="form-control has-form-message" placeholder="Username" required="required" />
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="col-xs-offset-1 col-xs-10">
+                                <input type="password" name="password" class="form-control has-form-message" placeholder="Password" required="required">
+                            </div>
+                        </div>
+                        <div class="form-group independent-form-group">
+                            <div class="col-xs-offset-1 col-xs-10">
+                                <div class="checkbox">
+                                    <label for="termsAccepted">
+                                        <input type="checkbox" id="termsAccepted" name="termsAccepted" required="required">
+                                        <span class="checkbox-replacement-helper"></span>
+                                        <small>
+                                            Yes, I understand and agree to the <a href="https://www.kazillian.com/info/terms/" target="_blank">Kazillian Terms of Service</a>, including the
+                                            <a href="https://www.kazillian.com/info/terms/" target="_blank">User Agreement</a> and
+                                            <a href="https://www.kazillian.com/info/terms/privacy/" target="_blank">Privacy Policy</a>.
+                                        </small>
+                                    </label>
+                                </div>
+
+                            </div>
+                        </div>
+                        <div class="form-group independent-form-group">
+                            <div class="col-xs-offset-1 col-xs-10 text-center">
+                                <input type="submit" class="btn btn-lg btn-default" value="Get Started" />
+                            </div>
                         </div>
                     </div>
                 }

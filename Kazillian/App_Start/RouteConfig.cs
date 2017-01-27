@@ -12,7 +12,21 @@ namespace Kazillian
         public static void RegisterRoutes(RouteCollection routes)
         {
             routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
-
+            routes.MapRoute(
+            name: "TOS",
+            url: "terms-of-service",
+            defaults: new { controller = "Home", action = "TermsOfService" }
+        );
+            routes.MapRoute(
+            name: "Privacy",
+            url: "privacy",
+            defaults: new { controller = "Home", action = "Privacy" }
+        );
+            routes.MapRoute(
+             name: "MyProfile",
+             url: "me",
+             defaults: new { controller = "Profile", action = "Me" }
+         );
             routes.MapRoute(
               name: "SignUp",
               url: "signup/{id}",

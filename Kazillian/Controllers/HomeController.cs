@@ -26,5 +26,15 @@ namespace Kazillian.Controllers
 
             return View();
         }
+        public ActionResult Privacy()
+        {
+            
+            return View();
+        }
+        public ActionResult TermsOfService()
+        {
+            
+            return View();
+        }
     }
 }

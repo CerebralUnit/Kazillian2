@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Kazillian.Model
 { 
-    public class SalesPerson : Account
+    public class SellerProfile 
     { 
         public string Id { get; set; }
         public string JobTitle { get; set; }

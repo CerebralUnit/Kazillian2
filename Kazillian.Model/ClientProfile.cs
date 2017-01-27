@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Kazillian.Model
 {
-    public class Owner : Account
+    public class ClientProfile
     {
         public string Industry { get; set; }
         public float Rating { get; set; }

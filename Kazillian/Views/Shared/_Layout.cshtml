@@ -11,6 +11,8 @@
     <link rel="stylesheet" href="/Content/Site.css">
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
+    @RenderSection("styles", required: false)
+
 
 </head>
 <body>
@@ -109,7 +111,7 @@
                     <div class="subfooter">
                         <span class="copyright">
                             &copy;2017 Kazillian
-                        </span> | <a href="#">Terms of Service</a> | <a href="#">Privacy Policy</a>
+                        </span> | <a href="/terms-of-service">Terms of Service</a> | <a href="/privacy">Privacy Policy</a>
                     </div>
                 </div>
             </div>
